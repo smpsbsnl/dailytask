@@ -1,0 +1,23 @@
+name: Daily Colab Execution
+
+on:
+  schedule:
+    - cron: '0 14 * * *'  # Schedule the job to run every day at 6 AM UTC
+
+jobs:
+  run-colab:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # If you have any dependencies
+
+      - name: Run Colab notebook
+        run: python mail_download.ipynb
