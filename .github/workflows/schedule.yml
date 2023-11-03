@@ -2,7 +2,7 @@ name: Daily Colab Execution
 
 on:
   schedule:
-    - cron: '55 12 * * *'  # Schedule the job to run every day at 6 AM UTC
+    - cron: '58 13 * * *'  # Schedule the job to run every day at 6 AM UTC
 
 jobs:
   run-colab:
